@@ -8,44 +8,57 @@
 <style type="text/css">
 	body{
 		margin: 0 auto;
-		overflow: hidden;
+		overflow-x:hidden;
 		width: 100%;
 	}
-	a{ 
-		text-decoration: none; 
-		color: #E2E2E2;
-		padding-left: 5px;
-		padding-right: 5px;
-		-webkit-transition: all 0.3s ease-out;		
-	}
-	a:hover{ 
-		color:#737373; 
-		background-color: #A5C8EF;
-
-	}
 	#header{
-		position: absolute;
+		position: fixed;
 		top: 0px;
 		width: 100%;
 	}
-	#navigat{
+	#footer{
 		position: absolute;
-		top: -188px;
+		top: 1500px;
+		width: 100%;
+	}
+	#navigat{
+		position: fixed;
+		top: -167px;
 		width: 100%;
 		height: 210px;
 		background-color:#5FAAE8; 
 		z-index: -2;
 		-webkit-transition: all 0.3s ease-out;
 	}
+	#footgat{
+		position: relative;
+		width: 20%;
+		height: 200px;
+		top: 1500px;
+		background-color: #666666;
+	}
 	#navline{
 		position: absolute;
-		top: 0px;
+		/*top: 0px;*/
 		height: 70px;
 	}
 	.transition{
 		-webkit-transition-property: width,margin,opacity,color,background,transform;
 		-webkit-transition-duration: 0.3s,0.3s,0.3s,0.3s,0.3s;
 		-webkit-transition-timing-function: linear,linear,ease-in-out,linear,linear,ease-in-out;
+	}
+	.button,.footbutton
+	{
+		width: 100px;
+		height: 25px;
+		margin:0 auto;
+		border-radius: 5px;
+		height:25px; 
+		line-height:25px; 
+		-webkit-transition: all 0.3s linear;
+	}
+	.button{
+		background:#5FAAE8;
 	}
 	.buttontxt
 	{
@@ -54,46 +67,54 @@
 		font-family: "Microsoft Yahei";
 		font-size: 14px;
 		color: #E2E2E2;
+		-webkit-transition: all 0.3s linear;
 	}
-	.button
-	{
-		width: 60px;
-		height: 25px;
-		margin:0 auto;
-		background:#5FAAE8;
-		border-radius: 5px;
-		height:25px; 
-		line-height:25px; 
-	}
-	.headtxt
+	.headtxt,.foottxt
 	{
 		text-align: center;
+		width: 100%;
 		cursor: default;
 		font-family: "Microsoft Yahei";
 		font-size: 18px;
 		color: #FFFFFF;
 	}
+	.headtxt{
+		position: fixed;
+	}
+	.foottxt{
+		position: absolute;
+		margin-top: 15px;
+		top: 1500px;
+	}
 	#buttongroup{
-		position: relative;
+		position: fixed;
+		width: 100%;
 		top:-158px;
 		opacity: 0;
 		z-index: -1;
 		-webkit-transition-property: opacity,top;
 		-webkit-transition-duration: 0.6s,0.3s;
 		-webkit-transition-timing-function: ease-out,linear;
-	}
-	#logo{
+	}	
+	#footbutgroup{
 		position: absolute;
-		width: 180px;
+		top: 1560px;
+		width: 100%;
+	}
+
+	.logo{
+		/*position: absolute;*/
+		max-width: 180px;
 		height: 28px;
-		left: 630px;
+		/*left: 630px;*/
 		top: 0px;
+		margin: 0 auto;
 	}
 	.option{
 		position: relative;
 		width: 20%;
 		float: right;
-		background-color:#5FAAE8; 
+		/*background-color:#5FAAE8; */
 		text-align: center;
 		height:37px; 
 		line-height:37px;
@@ -145,36 +166,67 @@
 	}
 
 
-
-
-
+	a{
+		text-decoration: none; 
+		padding-left: 5px;
+		padding-right: 5px;
+		/*background-color: #A5C8EF;*/
+		color: #E2E2E2;
+		-webkit-transition: all 0.3s ease-out;
+	}
 
 	.nav{
 		margin: 0 auto;
-	}
-	.second_ul { 
-		list-style-type:none; 
-		padding: 0px;
-		margin: 0px;
-		font-size: 12px;
-		opacity: 0;
-	}
-	.second:hover{
-		color: #00f;
-		background-color: #999;
+		line-height:25px; 
 	}
 	.nav:hover .second_ul{
 		opacity: 1;
-		/*background-color: #A5C8EF;*/
 		border-radius: 5px;
 	}
+	.second_ul { 
+		margin-top: -25px;
+		height: 25px;
+		/*list-style-type:none; */
+		padding: 0px;
+		font-size: 14px;
+		opacity: 0;
+		background-color: #A5C8EF;
+		border-radius: 5px;	
+		-webkit-transition: all 0.3s linear;
+	}
+	.second_ul a{
+		background-color: #A5C8EF;
+	}
+	.second_ul a:hover{
+		color:#737373; 
+	}
+
+	.second_uls { 
+		margin-top: -25px;
+		height: 25px;
+		list-style-type:none; 
+		padding: 0px;
+		font-size: 14px;
+		opacity: 0;
+		border-radius: 5px;	
+		-webkit-transition: all 0.3s linear;
+	}
+	.second_uls:hover{
+		background-color: #A5C8EF;
+	}
+	.second_uls a:hover{
+		color:#737373; 
+	}
+
+
+
 
 
 
 
 
 </style>
-<body id="bod">
+<body>
 	<div onmousemove="mMoveout(this)" id="navigat"></div>
 	<div id="header">
 		<div style="position: absolute; top:0px">
@@ -183,127 +235,206 @@
 			</svg>
 		</div>		
 		<div onmousemove="mMovein(Navline)" id="navline"></div>
-		<div onmousemove="mMovein(Navline)" id="logo"><img src="./logo.svg" /></div>
 	</div>
-</div>
-<div onmousemove="mMovein(Navline)" class="headtxt">
-	<div class="option">登陆</div>
-	<div class="option">&nbsp;&nbsp;快速入口</div>
-	<div class="option" style="background-color:transparent"></div>
-	<div class="option" style="float: left;">咨询</div>
-	<div class="option" style="float: left;">图文</div>
-</div>
+	<div onmousemove="mMovein(Navline)" class="headtxt">
+		<div class="option">登陆</div>
+		<div class="option">&nbsp;&nbsp;快速入口</div>
+		<div class="option">
+			<div class="logo"><img src="./logo.svg" /></div>
+		</div>
+		<div class="option" style="float: left;">咨询</div>
+		<div class="option" style="float: left;">图文</div>
+	</div>
 
 
 
 
 
-<div id="buttongroup">
-	<div class="butoption" style="float: right;">
-		<form class="search" style="margin-top:0px;" action="" method="get">
-			<input class="inputbox" name="user_search" placeholder="学号" />
-		</form>
-	</div>
-	<div class="butoption" style="float: right;">
-		<div class="nav buttontxt">校内办公
-			<div class="second_ul transition"> 
-				<a href="">社科系统</a>
-				<a href="">科研系统</a>
-				<a href="">财务系统</a>
+	<div id="buttongroup">
+		<div class="butoption buttontxt" style="float: right;">
+			<form class="search" style="margin-top:0px;" action="" method="get">
+				<input class="inputbox" name="user_search" placeholder="学号" />
+			</form>
+		</div>
+		<div class="butoption buttontxt" style="float: right;">
+			<div class="nav buttontxt">校内办公
+				<div class="second_ul"> 
+					<a href="">社科系统</a>
+					<a href="">科研系统</a>
+					<a href="">财务系统</a>
+				</div>
+			</div>
+		</div>
+		<div class="butoption" style="background-color:transparent;float: right;"></div>
+		<div class="butoption buttontxt">
+			<div class="second_uls" style="opacity:1;margin-top:0px;">
+				<a href="">通知</a>
+			</div>
+		</div>
+		<div class="butoption buttontxt">
+			<div class="second_uls" style="opacity:1;margin-top:0px;">
+				<a href="">热点专题</a>
+			</div>
+		</div>
+		<div class="butoption buttontxt">
+			<div class="second_uls" style="opacity:1;margin-top:0px;">
+				<a href="">新闻</a>
+			</div>
+		</div>
+		<div class="butoption buttontxt">
+			<div class="second_uls" style="opacity:1;margin-top:0px;">
+				<a href="">知图</a>
+			</div>
+		</div>
+		<div class="butoption buttontxt">
+			<form class="search" action="" method="get">
+				<input class="inputbox" name="user_search" placeholder="回车以搜索" />
+			</form>
+		</div>
+		<div class="butoption ">
+			<div class="nav buttontxt">教务系统
+				<div class="second_ul">
+					<a href="">课程中心</a>
+					<a href="">个人门户</a>
+					<a href="">教学服务</a>
+				</div>
+			</div>
+		</div>
+		<div class="butoption buttontxt">
+			<form class="search" style="margin-top:0px;" action="" method="get">
+				<input class="inputbox" name="user_search" placeholder="密码" />
+			</form>
+		</div>
+		<div class="butoption buttontxt">
+			<div class="second_uls" style="opacity:1;margin-top:0px;">
+				<a href="">办事指南</a>
+			</div>
+		</div>		
+		<div class="butoption buttontxt">
+			<div class="second_uls" style="opacity:1;margin-top:0px;">
+				<a href="">知湖活动</a>
+			</div>
+		</div>
+		<div class="butoption buttontxt">
+			<div class="box">2015年秋季学期<br />第14周</div>
+		</div>
+		<div class="butoption">
+			<div class="nav buttontxt">
+				<div class="second_uls" style="opacity:1;margin-top:0px;">
+					<a href="">湖大文库</a>
+					<a href="">新生宝典</a>
+					<a href="">校园地图</a>
+				</div>
+			</div>
+		</div>
+		<div class="butoption">
+			<div class="nav buttontxt">
+				<div class="second_uls" style="opacity:1;margin-top:0px;width:120px;margin:0 auto;">
+					<a href="">登陆</a>
+				</div>
+			</div>
+		</div>
+		<div class="butoption"></div>
+		<div class="butoption"></div>
+		<div class="butoption"></div>
+		<div class="butoption">
+			<div class="nav buttontxt">
+				<div class="second_uls" style="opacity:1;margin-top:0px;">
+					<a href="">心理</a>
+					<a href="">园区</a>
+					<a href="">湖大家园</a>
+					<a href="">岳麓学子论坛</a>
+				</div>
 			</div>
 		</div>
 	</div>
-	<div class="butoption" style="background-color:transparent;float: right;"></div>
-	<div class="butoption">
-		<div class="button transition">
-			<div onmouseover="mOver(this)" onmouseout="mOut(this)" class="buttontxt transition">
-				通知
+
+
+
+
+	<div id="footgat"></div>
+	<div id="footgat" style="float:right;margin-top: -200px;"></div>
+
+	<div id="footer">
+		<img src="./footer.svg" style="width:1440px">
+	</div>
+	<!-- <div id="footgat"></div> -->
+	<div class="foottxt">
+		<div class="option">联系我们 </div>
+		<div class="option">关于我们</div>
+		<div class="option"></div>
+		<div class="option" style="float: left;">学工服务 </div>
+		<div class="option" style="float: left;">弦歌产品</div>
+	</div>
+	<div id="footbutgroup">
+		<div class="butoption">
+			<div class="nav buttontxt">
+				<div class="second_uls" style="opacity:1;margin-top:0px;">
+					<a href="">湖大文库</a>
+				</div>
+				<div class="second_uls" style="opacity:1;margin-top:0px;">
+					<a href="">新生宝典</a>
+				</div>
+				<div class="second_uls" style="opacity:1;margin-top:0px;">
+					<a href="">你不懂啦</a>
+				</div>
+				<div class="second_uls" style="opacity:1;margin-top:0px;">
+					<a href="">查湖</a>
+				</div>
+				<div class="second_uls" style="opacity:1;margin-top:0px;">
+					<a href="">湖南大学微生活</a>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="butoption">
-		<div class="button transition">
-			<div onmouseover="mOver(this)" onmouseout="mOut(this)" class="buttontxt transition">
-				热点专题
+		<div class="butoption">
+			<div class="nav buttontxt">
+				<div class="second_uls" style="opacity:1;margin-top:0px;">
+					<a href="">部门介绍</a>
+				</div>
+				<div class="second_uls" style="opacity:1;margin-top:0px;">
+					<a href="">机构设置</a>
+				</div>
+				<div class="second_uls" style="opacity:1;margin-top:0px;">
+					<a href="">办事指南</a>
+				</div>
+				<div class="second_uls" style="opacity:1;margin-top:0px;">
+					<a href="">校长信箱</a>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="butoption">
-		<div class="button transition">
-			<div onmouseover="mOver(this)" onmouseout="mOut(this)" class="buttontxt transition">
-				新闻
+		<div class="butoption">
+			<div class="logo"><img src="./logo.svg" /></div>
+		</div>
+		<div class="butoption">
+			<div class="nav buttontxt">
+				<div class="second_uls" style="opacity:1;margin-top:0px;">
+					<a href="">团队介绍</a>
+				</div>
+				<div class="second_uls" style="opacity:1;margin-top:0px;">
+					<a href="">加入我们</a>
+				</div>
+				<div class="second_uls" style="opacity:1;margin-top:0px;">
+					<a href="">投稿说明</a>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="butoption">
-		<div class="button transition">
-			<div onmouseover="mOver(this)" onmouseout="mOut(this)" class="buttontxt transition">
-				知图
-			</div>
-		</div>
-	</div>
-	<div class="butoption">
-		<form class="search" action="" method="get">
-			<input class="inputbox" name="user_search" placeholder="回车以搜索" />
-		</form>
-	</div>
-	<div class="butoption">
-		<div class="nav buttontxt">教务系统
-			<div class="second_ul transition">
-				<a href="">课程中心</a>
-				<a href="">个人门户</a>
-				<a href="">教学服务</a>
-			</div>
-		</div>
-	</div>
-	<div class="butoption">
-		<form class="search" style="margin-top:0px;" action="" method="get">
-			<input class="inputbox" name="user_search" placeholder="密码" />
-		</form>
-	</div>
-	<div class="butoption">
-		<div class="button transition">
-			<div onmouseover="mOver(this)" onmouseout="mOut(this)" class="buttontxt transition">
-				办事指南
-			</div>
-		</div>
-	</div>		
-	<div class="butoption">
-		<div class="button transition">
-			<div onmouseover="mOver(this)" onmouseout="mOut(this)" class="buttontxt transition">
-				知湖活动
-			</div>
-		</div>
-	</div>
-	<div class="butoption">
-		<div class="box">2015年秋季学期<br />第14周</div>
-	</div>
-	<div class="butoption">
-		<div class="nav buttontxt">
-			<div class="second_ul transition" style="font-size: 14px;opacity: 1;">
-				<a href="">湖大文库</a>
-				<a href="">新生宝典</a>
-				<a href="">校园地图</a>
-			</div>
-		</div>
-	</div>
-	<div class="butoption">
-		<div class="button transition" style="width:40px">
-			<div onmouseover="mOver(this)" onmouseout="mOut(this)" class="buttontxt transition">
-				登陆
-			</div>
-		</div>
-	</div>
-	<div class="butoption"></div>
-	<div class="butoption"></div>
-	<div class="butoption"></div>
-	<div class="butoption">
-		<div class="nav buttontxt">
-			<div class="second_ul transition" style="font-size: 14px;opacity: 1;">
-				<a href="">心理</a>
-				<a href="">园区</a>
-				<a href="">湖大家园</a>
-				<a href="">岳麓学子论坛</a>
+		<div class="butoption">
+			<div class="nav buttontxt">
+				<div class="second_uls" style="opacity:1;margin-top:0px;">
+					<a href="">@湖南大学千年弦歌</a>
+				</div>
+				<div class="second_uls" style="opacity:1;margin-top:0px;">
+					<a href="">@湖南大学学生工作部</a>
+				</div>
+				<div class="second_uls" style="opacity:1;margin-top:0px;">
+					<a href="">湖南大学学生工作部</a>
+				</div>
+				<div class="second_uls" style="opacity:1;margin-top:0px;">
+					<a href="">3256777</a>
+				</div>
+				<div class="second_uls" style="opacity:1;margin-top:0px;">
+					<a href="">QNXG@gmail.com</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -314,6 +445,10 @@
 	var Navigat=document.getElementById("navigat");
 	var Navline=document.getElementById("navline");
 	var Butgroup=document.getElementById("buttongroup");
+	var bghide="-162px";
+	var bgshow="60px";
+	var nghide="-167px";
+	var ngshow="0px"
 	window.onload=function(){repos ()};
 	window.onresize=function(){repos ()};
 	writeNavline (Navline,0.5);
@@ -321,6 +456,7 @@
 	function repos () {
 		var width=window.innerWidth;
 		document.getElementById("header").style.left=-(1440-width)/2+"px";
+		document.getElementById("footer").style.left=-(1440-width)/2+"px";
 	}
 	function mMovein (obj) {
 		var width=window.innerWidth;
@@ -330,8 +466,8 @@
 		var num=(event.clientX)/width;
 		var grad=num.toFixed(2);
 		if ((y<=230)&&(y>5)&&(x>5)&&(x<width-5)){
-			Navigat.style.top=0+"px";
-			Butgroup.style.top=26+"px";
+			Navigat.style.top=ngshow;
+			Butgroup.style.top=bgshow;
 			Butgroup.style.opacity=1;
 			writeNavline (obj,grad);
 		}else{
@@ -344,32 +480,16 @@
 		var y=event.clientY;	
 		console.log(y);	
 		if ((y>200)||(x<5)||(x>width-5)){
-			Navigat.style.top=-188+"px";
-			Butgroup.style.top=-162+"px";
+			Navigat.style.top=nghide;
+			Butgroup.style.top=bghide;
 			Butgroup.style.opacity=0;
 			writeNavline (Navline,0.5);
 		};
 	}
 	function writeNavline (obj,grad) {
-		obj.innerHTML='<svg id="Menu" width="1440" height="63"><linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1440" y2="0"><stop  offset="0" style="stop-color:#5FAAE8"></stop><stop offset='+grad+' style="stop-color:#FFFFFF"></stop><stop  offset="1" style="stop-color:#5FAAE8"></stop></linearGradient><path fill="none" stroke="url(#SVGID_1_)" stroke-width="5" stroke-miterlimit="10" d="M0,40L420,40c200,0,230,20,300,20c70,0,100,-20,300,-20L1440,40"></path></svg>';
+		obj.innerHTML='<svg id="Menu" width="1440" height="63"><linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1440" y2="0"><stop  offset="0" style="stop-color:#5FAAE8"></stop><stop offset='+grad+' style="stop-color:#FFFFFF"></stop><stop  offset="1" style="stop-color:#5FAAE8"></stop></linearGradient><path fill="none" stroke="url(#SVGID_1_)" stroke-width="6" stroke-miterlimit="10" d="M0,40L420,40c200,0,230,20,300,20c70,0,100,-20,300,-20L1440,40"></path></svg>';
 	}
-	function mOver(obj)
-	{
-		// obj.parentNode.style.marginLeft=-35+"px";
-		obj.parentNode.style.width=100+"px";
-		obj.parentNode.style.backgroundColor="#A5C8EF";
-		obj.style.color="#737373";
-	}
-	function mOut(obj)
-	{
-		// obj.parentNode.style.marginLeft=0+"px";
-		obj.parentNode.style.width=60+"px";
-		obj.parentNode.style.backgroundColor="#5FAAE8";
-		obj.style.color="#E2E2E2";
-	}
-	function larger (argument) {
-		// body...
-	}
+
 
 </script>
 
