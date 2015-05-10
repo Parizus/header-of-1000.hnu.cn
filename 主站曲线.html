@@ -8,6 +8,7 @@
 <style type="text/css">
 	body{
 		margin: 0 auto;
+		height: 0px;
 		overflow-x:hidden;
 		width: 100%;
 	}
@@ -36,6 +37,11 @@
 		height: 200px;
 		top: 1500px;
 		background-color: #666666;
+	}
+	@media screen and (min-width:2300px){
+		#footgat{
+			width: 40%;
+		}
 	}
 	#navline{
 		position: absolute;
@@ -105,7 +111,7 @@
 	.logo{
 		/*position: absolute;*/
 		max-width: 180px;
-		height: 28px;
+		height: 42px;
 		/*left: 630px;*/
 		top: 0px;
 		margin: 0 auto;
@@ -363,8 +369,8 @@
 		<div class="option">联系我们 </div>
 		<div class="option">关于我们</div>
 		<div class="option"></div>
-		<div class="option" style="float: left;">学工服务 </div>
 		<div class="option" style="float: left;">弦歌产品</div>
+		<div class="option" style="float: left;">学工服务</div>
 	</div>
 	<div id="footbutgroup">
 		<div class="butoption">
@@ -445,6 +451,8 @@
 	var Navigat=document.getElementById("navigat");
 	var Navline=document.getElementById("navline");
 	var Butgroup=document.getElementById("buttongroup");
+	var Header=document.getElementById("header");
+	var Footer=document.getElementById("footer")
 	var bghide="-162px";
 	var bgshow="60px";
 	var nghide="-167px";
@@ -455,8 +463,8 @@
 
 	function repos () {
 		var width=window.innerWidth;
-		document.getElementById("header").style.left=-(1440-width)/2+"px";
-		document.getElementById("footer").style.left=-(1440-width)/2+"px";
+		Header.style.left=-(1440-width)/2+"px";
+		Footer.style.left=-(1440-width)/2+"px";
 	}
 	function mMovein (obj) {
 		var width=window.innerWidth;
